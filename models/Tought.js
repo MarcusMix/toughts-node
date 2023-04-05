@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 
-import sequelize from "../db/conn";
+import sequelize from "../db/conn.js";
 
-//user
+import User from "./User.js";
 
 const Tought = sequelize.define("Tought", {
 	title: {
@@ -11,5 +11,9 @@ const Tought = sequelize.define("Tought", {
 		require: true,
 	},
 });
+
+//
+Tought.belongsTo(User)
+User.hasMany(Tought)
 
 export default Tought;
