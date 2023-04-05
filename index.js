@@ -47,6 +47,9 @@ app.use(
 // flash messages
 app.use(flash());
 
+//public path
+app.use(e.static("public"));
+
 //set session  to response
 app.use((req, res, next) => {
 	if (req.session.userid) {
